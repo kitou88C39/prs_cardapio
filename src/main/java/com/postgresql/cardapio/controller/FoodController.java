@@ -1,6 +1,7 @@
 package com.postgresql.cardapio.controller;
 
 import com.postgresql.cardapio.food.Food;
+import com.postgresql.cardapio.food.FoodReponseDTO;
 import com.postgresql.cardapio.food.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class FoodController {
 
     @GetMapping
     public List<FoodResponseDTO> getAll() {
-        List<Food> foodList = repository.findAll();
+        List<Food> foodList = repository.findAll().stream().map(FoodReponseDTO::new);
         return foodList;
     }
 }
