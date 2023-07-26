@@ -16,7 +16,7 @@ public class FoodController {
     private FoodRepository repository;
 
     @GetMapping
-    public List<FoodResponseDTD> getAll() {
+    public List<FoodResponseDTO> getAll() {
         List<Food> foodList = repository.findAll();
         return foodList;
     }
