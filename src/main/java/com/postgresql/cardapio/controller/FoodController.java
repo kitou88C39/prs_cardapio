@@ -21,7 +21,8 @@ public class FoodController {
     @GetMapping
     public void saveFood(@RequestBody FoodRequestDTO data) {
         Food foodData = new Food(data);
-        repository.save(data);
+        repository.save(foodData);
+        return;
     }
 
     @GetMapping
