@@ -1,8 +1,8 @@
 package com.postgresql.cardapio.food;
 
-public record FoodReponseDTO(Long id, String title, String image, Integer price) {
+public record FoodResponseDTO(Long id, String title, String image, Integer price) {
 
-    public FoodReponseDTO(Food food) {
+    public FoodResponseDTO(Food food) {
         this(food.getId(), food.getTitle(), food.getImage(), food.getPrice());
     }
 }
